@@ -6,7 +6,7 @@
 /*   By: tsomchan <tsomchan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 05:24:49 by tsomchan          #+#    #+#             */
-/*   Updated: 2025/07/08 05:35:04 by tsomchan         ###   ########.fr       */
+/*   Updated: 2025/07/08 05:51:20 by tsomchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,21 +22,25 @@ Harl::~Harl()
 
 void	Harl::debug(void)
 {
+	std::cout << YLW "[ DEBUG ]" NCL << std::endl;
 	std::cout << YLW "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I really do!" NCL << std::endl;
 }
 
 void	Harl::info(void)
 {
+	std::cout << CYN "[ INFO ]" NCL << std::endl;
 	std::cout << CYN "I cannot believe adding extra bacon costs more money. You didn't put enough bacon in my burger! If you did, I wouldn't be asking for more!" NCL << std::endl;
 }
 
 void	Harl::warning(void)
 {
+	std::cout << PUR "[ WARNING ]" NCL << std::endl;
 	std::cout << PUR "I think I deserve to have some extra bacon for free. I've been coming for years whereas you started working here just last month." NCL << std::endl;
 }
 
 void	Harl::error(void)
 {
+	std::cout << RED "[ ERROR ]" NCL << std::endl;
 	std::cout << RED "This is unacceptable! I want to speak to the manager now." NCL << std::endl;
 }
 
@@ -45,14 +49,25 @@ void	Harl::complain( std::string level )
 	void	(Harl::*Harl_funcs[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 	const	std::string	comments[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
-	for (int i = 0; i < 4; i++)
-	{
+	int i = 0;
+	for (; i < 4; i++)
 		if (level == comments[i])
-		{
-			for (int j = i; j < 4; j++)
-				(this->*Harl_funcs[j])();
-			return ;
-		}
+			break ;
+	switch(i)
+	{
+		case(0):
+				(this->*Harl_funcs[0])();
+				__attribute__ ((fallthrough));
+		case(1):
+				(this->*Harl_funcs[1])();
+				__attribute__ ((fallthrough));
+		case(2):
+				(this->*Harl_funcs[2])();
+				__attribute__ ((fallthrough));
+		case(3):
+				(this->*Harl_funcs[3])();
+				break ;
+		default:
+			std::cout << NCL "I can't believe you messed up so bad! I got no word for you..." NCL << std::endl;
 	}
-	std::cout << NCL "I can't believe you messed up so bad! I got no word for you..." NCL << std::endl;
 }

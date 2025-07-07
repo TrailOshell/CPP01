@@ -6,11 +6,11 @@
 #    By: tsomchan <tsomchan@student.42bangkok.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/08 05:25:01 by tsomchan          #+#    #+#              #
-#    Updated: 2025/07/08 05:25:03 by tsomchan         ###   ########.fr        #
+#    Updated: 2025/07/08 05:37:29 by tsomchan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	Harl
+NAME			=	harlFilter
 
 INC				=	.
 
