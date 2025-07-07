@@ -6,7 +6,7 @@
 /*   By: tsomchan <tsomchan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 04:26:25 by tsomchan          #+#    #+#             */
-/*   Updated: 2025/07/08 05:08:10 by tsomchan         ###   ########.fr       */
+/*   Updated: 2025/07/08 05:11:41 by tsomchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Harl::~Harl()
 
 void	Harl::debug(void)
 {
-	std::cout << YLW "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!" NCL << std::endl;
+	std::cout << YLW "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I really do!" NCL << std::endl;
 }
 
 void	Harl::info(void)
@@ -32,7 +32,7 @@ void	Harl::info(void)
 
 void	Harl::warning(void)
 {
-	std::cout << PUR "I think I deserve to have some extra bacon for free. I've been coming for years whereas you started working here since last month." NCL << std::endl;
+	std::cout << PUR "I think I deserve to have some extra bacon for free. I've been coming for years whereas you started working here just last month." NCL << std::endl;
 }
 
 void	Harl::error(void)
