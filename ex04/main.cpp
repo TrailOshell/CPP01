@@ -6,7 +6,7 @@
 /*   By: tsomchan <tsomchan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 01:38:12 by tsomchan          #+#    #+#             */
-/*   Updated: 2025/07/08 03:16:28 by tsomchan         ###   ########.fr       */
+/*   Updated: 2025/07/08 04:02:36 by tsomchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,55 +16,46 @@
 #include <iostream>
 #include <fstream>
 
+int		printError(std::string text)
+{
+	std::cout << text << std::endl;
+	return (1);
+}
+
 void	replacing(std::ofstream &fo, std::string s1, std::string s2, std::string buffer)
 {
-	size_t	pos;
-	
-	pos = buffer.find(s1);
+	size_t	pos = buffer.find(s1);
+
 	if (pos == std::string::npos)
 	{
 		fo << buffer;
 		return ;
 	}
-	else
-	{
-		fo << buffer.substr(0, pos);
-		fo << s2;
-		replacing(fo, s1, s2, buffer.substr(pos + s1.length()));
-	}
+	fo << buffer.substr(0, pos);
+	fo << s2;
+	replacing(fo, s1, s2, buffer.substr(pos + s1.length()));
 }
 
 int main(int argc, char **argv)
 {
 	if (argc != 4)
-	{
-		std::cout << YLW"wrong input: " CYN"Must input as " WHT"./replace <file_name> <search> <replace>" NCL << std::endl;
-		return (1);
-	}
+		return (printError(YLW"wrong input: " CYN"Must input as " WHT"./replacer <file_name> <search> <replace>" NCL));
 	
 	std::ifstream  fi;
 	std::ofstream  fo;
 	fi.open(argv[1]);
 	if (!fi)
-	{
-		std::cout << "Failed to open fileIn" << std::endl;
-		return (1);
-	}
-	std::string file = argv[1];
-	std::string fileOut = file + ".replace";
-	fo.open(fileOut.c_str(), std::fstream::out);
+		return (printError("Failed to open fileIn"));
+	fo.open(((std::string)argv[1] + ".replace").c_str(), std::fstream::out);
 	if (!fo)
 	{
-		std::cout << "Failed to open fileOut" << std::endl;
 		fi.close();
-		return (1);
+		return (printError("Failed to open fileOut"));
 	}
 	
-	std::string s1 = argv[2];
-	std::string s2 = argv[3];
 	std::string buffer;
 	while (std::getline(fi, buffer))
-		replacing(fo, s1, s2, buffer + '\n');
+		replacing(fo, argv[2], argv[3], buffer + '\n');
 	
 	fi.close();
 	fo.close();
