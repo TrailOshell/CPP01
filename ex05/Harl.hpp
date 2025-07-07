@@ -6,7 +6,7 @@
 /*   By: tsomchan <tsomchan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 04:26:27 by tsomchan          #+#    #+#             */
-/*   Updated: 2025/07/08 04:32:39 by tsomchan         ###   ########.fr       */
+/*   Updated: 2025/07/08 04:50:22 by tsomchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Harl
 		Harl();
 		~Harl();
 		void	complain( std::string level );	
-}
+};
 
 # ifndef DEBUG_MODE
 #  define DEBUG_MODE	0
