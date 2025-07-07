@@ -32,4 +32,4 @@
 *.app
 
 # Program files
-ex00/zombie
+*/zombie
