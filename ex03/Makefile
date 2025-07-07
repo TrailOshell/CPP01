@@ -6,13 +6,15 @@
 #    By: tsomchan <tsomchan@student.42bangkok.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/08 00:13:22 by tsomchan          #+#    #+#              #
-#    Updated: 2025/07/08 00:13:24 by tsomchan         ###   ########.fr        #
+#    Updated: 2025/07/08 01:09:52 by tsomchan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	VIOLENCE
 
-INC				=	HumanA.hpp \
+INC				=	.
+
+INCS			=	HumanA.hpp \
 					HumanB.hpp \
 					Weapon.hpp
 
