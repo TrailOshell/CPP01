@@ -6,7 +6,7 @@
 #    By: tsomchan <tsomchan@student.42bangkok.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/08 01:38:23 by tsomchan          #+#    #+#              #
-#    Updated: 2025/07/08 01:47:10 by tsomchan         ###   ########.fr        #
+#    Updated: 2025/07/08 03:27:49 by tsomchan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,9 @@ re: fclean all
 .PHONY: all clean fclean re
 
 t: $(NAME)
-	./$(NAME)
+	touch SED
+	echo "Bake Cake Bake Cake Bake Cake Bake Cake Bake Cake Bake Cake" > SED
+	./$(NAME) SED Cake Lake
 
 D_NAME		=	$(addprefix $(NAME), _debug)
 D_OBJS		=	$(SRCS:%.cpp=$(OBJS_PTH)%_d.o)

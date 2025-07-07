@@ -6,14 +6,12 @@
 /*   By: tsomchan <tsomchan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 01:41:13 by tsomchan          #+#    #+#             */
-/*   Updated: 2025/07/08 01:42:04 by tsomchan         ###   ########.fr       */
+/*   Updated: 2025/07/08 02:07:59 by tsomchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MAIN_HPP
 # define MAIN_HPP
-# include <iostream>
-# include <string>
 
 # ifndef DEBUG_MODE
 #  define DEBUG_MODE	0
