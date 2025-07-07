@@ -8,12 +8,13 @@ Zombie::Zombie(std::string new_name)
 
 Zombie::~Zombie()
 {
-	std::cout << _name << " is destroyed" << std::endl;
+	std::cout << CYN << _name;
+	std::cout << RED << " is destroyed" << std::endl;
 }
 
 void Zombie::announce(void)
 {
-	std::cout << _name;
+	std::cout << CYN << _name;
 	std::cout << ": ";
-	std::cout << "BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << RED << "Braiiiiiii" << GRN << "nnnzzzZ..." << std::endl;
 }
