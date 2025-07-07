@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	zombie
+NAME			=	Zombie
 
 INC				=	Zombie.hpp
 SRCS			=	main.cpp \
@@ -31,9 +31,11 @@ $(NAME): $(OBJS)
 
 clean:
 	rm -f $(OBJS)
+	rm -f $(D_OBJS)
 
 fclean: clean
 	rm -f $(NAME)
+	rm -f $(D_NAME)
 
 re: fclean all
 
@@ -42,4 +44,23 @@ re: fclean all
 t: $(NAME)
 	./$(NAME)
 
-.PHONY: t
+D_NAME		=	Zombie_debug
+D_OBJS		=	$(SRCS:%.cpp=%_d.o)
+DFLAGS		=	-D DEBUG_MODE=1
+
+$(D_NAME): $(D_OBJS)
+	$(C++) $(C++FLAGS) $(DFLAGS) $(D_OBJS) -I$(INC) -o $(D_NAME)
+
+%_d.o: %.cpp Makefile $(INC)
+	$(C++) $(C++FLAGS) $(DFLAGS) -c $< -o $@
+
+d: $(D_NAME)
+	./$(D_NAME)
+
+val: $(NAME)
+	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)
+
+val_d: $(D_NAME)
+	valgrind --leak-check=full --show-leak-kinds=all ./$(D_NAME)
+
+.PHONY: t d val val_d

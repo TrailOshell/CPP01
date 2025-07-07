@@ -14,10 +14,15 @@ class Zombie
 		Zombie();
 		Zombie(std::string name);
 		~Zombie();
+		void	set_name(std::string name);
 		void	announce(void);
 };
 
 Zombie* zombieHorde(int N, std::string name);
+
+# ifndef DEBUG_MODE
+#  define DEBUG_MODE	0
+# endif
 
 # define NCL		"\033[0m"
 # define BLK		"\033[0;30m"

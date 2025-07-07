@@ -1,53 +1,62 @@
 #include "Zombie.hpp"
 
-std::string	start_div(void)
+void print_div(std::string text)
 {
-	return (YLW "- -- --- " NCL);
-}
-
-std::string	end_div(void)
-{
-	return (YLW " --- -- -" NCL);
-}
-
-std::string run_div(std::string text)
-{
-	return (start_div() + text + end_div());
+	std::cout << std::endl;
+	std::cout <<  YLW "- -- --- " NCL + text + YLW " --- -- -" NCL;
+	std::cout << std::endl;
 }
 
 int main(void)
 {
-	std::cout << run_div(GRN "Begin the program") << std::endl;
+	Zombie	*hoard;
+	int		count;
 
-	std::cout << std::endl;
+	print_div(CYN "CPP01 ex01");
+	print_div(GRN "Program started");
 
-	std::cout << run_div(GRN "The hoard is coming!") << std::endl;
-	Zombie *z = zombieHorde(3, "hoardling");
+	print_div(GRN "The hoard is coming!");
+	count = 3;
+	hoard = zombieHorde(count, "zombie");
 
-	std::cout << std::endl;
+	if (DEBUG_MODE == 1)
+	{
+		print_div(PUR "The hoard annouce itself");
+		hoard->announce();
+	}
 
-	std::cout << run_div(YLW "The hoard annouce itself") << std::endl;
-	z->announce();
+	print_div(YLW "The zombies annouce themself");
+	for (int i = 0; i < count; i++)
+		hoard[i].announce();
 
-	std::cout << std::endl;
+	if (DEBUG_MODE == 1)
+	{
+		print_div(PUR "Unnamed zombie tried to announce itself");
+		hoard[10].announce();
+	}
 
-	std::cout << run_div(YLW "The hoardlings annouce themself") << std::endl;
-	z[0].announce();
-	z[1].announce();
-	z[2].announce();
+	print_div(RED "delete[]");
+	delete[] hoard;
 
-	std::cout << std::endl;
+	print_div(YLW "zombieHorde(0, \"zombie\")");
+	hoard = zombieHorde(0, "zombie");
 
-	std::cout << run_div(YLW "Unnamed hoardling tried to announce itself") << std::endl;
-	z[10].announce();
+	print_div(YLW "zombieHorde(-1, \"zombie\")");
+	hoard = zombieHorde(-1, "zombie");
 
-	std::cout << std::endl;
-
-	std::cout << run_div(RED "delete[]") << std::endl;
-	delete[] z;
-
-	std::cout << std::endl;
-
-	std::cout << run_div(PUR "  End of program   ") << std::endl;
-	return 0;
+	if (DEBUG_MODE == 1)
+	{
+		try
+		{
+			print_div(PUR "zombieHorde(3, NULL)");
+			hoard = zombieHorde(3, NULL);
+		}
+		catch (...)
+		{
+			std::cout << RED "You can't just put NULL for string" NCL << std::endl;
+		}
+	}
+	
+	print_div(RED "Program ended");
+	return (0);
 }

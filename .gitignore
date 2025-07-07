@@ -32,4 +32,5 @@
 *.app
 
 # Program files
-*/zombie
+*/Zombie
+*/Zombie_debug
