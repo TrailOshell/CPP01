@@ -44,7 +44,7 @@ re: fclean all
 t: $(NAME)
 	./$(NAME)
 
-D_NAME		=	Zombie_debug
+D_NAME		=	$(addprefix $(NAME), _debug)
 D_OBJS		=	$(SRCS:%.cpp=%_d.o)
 DFLAGS		=	-D DEBUG_MODE=1
 
