@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+# Program files
+ex00/zombie
