@@ -6,7 +6,7 @@
 #    By: tsomchan <tsomchan@student.42bangkok.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/08 00:13:22 by tsomchan          #+#    #+#              #
-#    Updated: 2025/07/08 01:22:56 by tsomchan         ###   ########.fr        #
+#    Updated: 2025/07/08 01:48:01 by tsomchan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ SRCS			=	main.cpp \
 					HumanB.cpp \
 					Weapon.cpp
 
-OBJS			=	$(SRCS:%.cpp=%.o)
+OBJS_PTH		=	obj/
+OBJS			=	$(SRCS:%.cpp=$(OBJS_PTH)%.o)
 
 C++				=	c++
 C++FLAGS		=	-std=c++98 -Werror -Wall -Wextra
@@ -33,12 +34,15 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(C++) $(C++FLAGS) $(OBJS) -I$(INC) -o $(NAME)
 
-%.o: %.cpp Makefile $(INCS)
+$(OBJS_PTH)%.o: %.cpp Makefile $(INCS) | $(OBJS_PTH)
 	$(C++) $(C++FLAGS) -c $< -o $@
+$(OBJS_PTH):
+	mkdir -p $(OBJS_PTH)
 
 clean:
 	rm -f $(OBJS)
 	rm -f $(D_OBJS)
+	rm -rf $(OBJS_PTH)
 
 fclean: clean
 	rm -f $(NAME)
@@ -58,7 +62,7 @@ DFLAGS		=	-D DEBUG_MODE=1
 $(D_NAME): $(D_OBJS)
 	$(C++) $(C++FLAGS) $(DFLAGS) $(D_OBJS) -I$(INC) -o $(D_NAME)
 
-%_d.o: %.cpp Makefile $(INCS)
+$(OBJS_PTH)%_d.o: %.cpp Makefile $(INCS) | $(OBJS_PTH)
 	$(C++) $(C++FLAGS) $(DFLAGS) -c $< -o $@
 
 d: $(D_NAME)

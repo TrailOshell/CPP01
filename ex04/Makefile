@@ -6,7 +6,7 @@
 #    By: tsomchan <tsomchan@student.42bangkok.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/08 01:38:23 by tsomchan          #+#    #+#              #
-#    Updated: 2025/07/08 01:40:43 by tsomchan         ###   ########.fr        #
+#    Updated: 2025/07/08 01:47:10 by tsomchan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,9 +31,9 @@ $(NAME): $(OBJS)
 
 $(OBJS_PTH)%.o: %.cpp Makefile $(INCS) | $(OBJS_PTH)
 	$(C++) $(C++FLAGS) -c $< -o $@
-
 $(OBJS_PTH):
 	mkdir -p $(OBJS_PTH)
+
 clean:
 	rm -f $(OBJS)
 	rm -f $(D_OBJS)
@@ -57,7 +57,7 @@ DFLAGS		=	-D DEBUG_MODE=1
 $(D_NAME): $(D_OBJS)
 	$(C++) $(C++FLAGS) $(DFLAGS) $(D_OBJS) -I$(INC) -o $(D_NAME)
 
-$(OBJS_PTH)%_d.o: %.cpp Makefile $(INCS)
+$(OBJS_PTH)%_d.o: %.cpp Makefile $(INCS) | $(OBJS_PTH)
 	$(C++) $(C++FLAGS) $(DFLAGS) -c $< -o $@
 
 d: $(D_NAME)

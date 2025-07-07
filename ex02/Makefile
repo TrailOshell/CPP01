@@ -6,7 +6,7 @@
 #    By: tsomchan <tsomchan@student.42bangkok.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/08 00:06:27 by tsomchan          #+#    #+#              #
-#    Updated: 2025/07/08 00:06:32 by tsomchan         ###   ########.fr        #
+#    Updated: 2025/07/08 01:49:10 by tsomchan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,11 +28,9 @@ $(NAME): $(OBJS)
 
 clean:
 	rm -f $(OBJS)
-	rm -f $(D_OBJS)
 
 fclean: clean
 	rm -f $(NAME)
-	rm -f $(D_NAME)
 
 re: fclean all
 
