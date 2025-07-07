@@ -6,7 +6,7 @@
 /*   By: tsomchan <tsomchan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 04:26:25 by tsomchan          #+#    #+#             */
-/*   Updated: 2025/07/08 05:11:41 by tsomchan         ###   ########.fr       */
+/*   Updated: 2025/07/08 05:16:24 by tsomchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,10 @@ void	Harl::complain( std::string level )
 	for (int i = 0; i < 4; i++)
 	{
 		if (level == comments[i])
+		{
 			(this->*Harl_funcs[i])();
+			return ;
+		}
 	}
-	return ;
+	std::cout << NCL "I can't believe you messed up so bad! I got no word for you..." NCL << std::endl;
 }
