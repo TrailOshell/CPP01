@@ -6,7 +6,7 @@
 /*   By: tsomchan <tsomchan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 00:13:10 by tsomchan          #+#    #+#             */
-/*   Updated: 2025/07/08 01:00:33 by tsomchan         ###   ########.fr       */
+/*   Updated: 2025/07/08 01:21:08 by tsomchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class HumanB
 		HumanB(std::string new_name);
 		~HumanB();
 		
-		void attack(void);
 		void setWeapon(Weapon &new_weapon);
+		void attack(void);
 };
 #endif

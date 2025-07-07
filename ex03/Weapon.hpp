@@ -6,7 +6,7 @@
 /*   By: tsomchan <tsomchan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 00:13:08 by tsomchan          #+#    #+#             */
-/*   Updated: 2025/07/08 01:13:12 by tsomchan         ###   ########.fr       */
+/*   Updated: 2025/07/08 01:22:31 by tsomchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ class Weapon
 		~Weapon();
 		std::string getType() const;
 		void setType(std::string new_type);
-
 };
 
 # ifndef DEBUG_MODE
