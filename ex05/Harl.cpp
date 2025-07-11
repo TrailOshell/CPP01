@@ -6,7 +6,7 @@
 /*   By: tsomchan <tsomchan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 04:26:25 by tsomchan          #+#    #+#             */
-/*   Updated: 2025/07/08 05:16:24 by tsomchan         ###   ########.fr       */
+/*   Updated: 2025/07/11 23:06:36 by tsomchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,16 @@ void	Harl::error(void)
 
 void	Harl::complain( std::string level )
 {
+	const	std::string	complains[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	void	(Harl::*Harl_funcs[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-	const	std::string	comments[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
 	for (int i = 0; i < 4; i++)
 	{
-		if (level == comments[i])
+		if (level == complains[i])
 		{
 			(this->*Harl_funcs[i])();
 			return ;
 		}
 	}
-	std::cout << NCL "I can't believe you messed up so bad! I got no word for you..." NCL << std::endl;
+	std::cout << NCL "I can't believe you messed up so horrible! I got no word for you..." NCL << std::endl;
 }

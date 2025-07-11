@@ -6,7 +6,7 @@
 /*   By: tsomchan <tsomchan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 05:24:49 by tsomchan          #+#    #+#             */
-/*   Updated: 2025/07/08 05:51:20 by tsomchan         ###   ########.fr       */
+/*   Updated: 2025/07/11 23:18:03 by tsomchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,28 +46,29 @@ void	Harl::error(void)
 
 void	Harl::complain( std::string level )
 {
+	const	std::string	complains[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	void	(Harl::*Harl_funcs[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-	const	std::string	comments[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
-	int i = 0;
-	for (; i < 4; i++)
-		if (level == comments[i])
-			break ;
-	switch(i)
+	for (int i = 0; i < 4; i++)
 	{
-		case(0):
-				(this->*Harl_funcs[0])();
-				__attribute__ ((fallthrough));
-		case(1):
-				(this->*Harl_funcs[1])();
-				__attribute__ ((fallthrough));
-		case(2):
-				(this->*Harl_funcs[2])();
-				__attribute__ ((fallthrough));
-		case(3):
-				(this->*Harl_funcs[3])();
-				break ;
-		default:
-			std::cout << NCL "I can't believe you messed up so bad! I got no word for you..." NCL << std::endl;
+		if (level == complains[i])
+		{
+			switch(i)
+			{
+				case(0):
+						(this->*Harl_funcs[0])();
+						__attribute__ ((fallthrough));
+				case(1):
+						(this->*Harl_funcs[1])();
+						__attribute__ ((fallthrough));
+				case(2):
+						(this->*Harl_funcs[2])();
+						__attribute__ ((fallthrough));
+				case(3):
+						(this->*Harl_funcs[3])();
+			}
+		}
 	}
+	std::cout << NCL "[ ??? ]" NCL << std::endl;
+	std::cout << NCL "I can't believe you messed up so horrible! I got no word for you..." NCL << std::endl;
 }
