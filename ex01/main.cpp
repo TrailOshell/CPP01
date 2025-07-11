@@ -6,7 +6,7 @@
 /*   By: tsomchan <tsomchan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 00:05:50 by tsomchan          #+#    #+#             */
-/*   Updated: 2025/07/08 00:05:51 by tsomchan         ###   ########.fr       */
+/*   Updated: 2025/07/12 00:14:41 by tsomchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,31 +31,28 @@ int main(void)
 	count = 3;
 	hoard = zombieHorde(count, "zombie");
 
-	if (DEBUG_MODE == 1)
-	{
-		print_div(PUR "The hoard annouce itself");
-		hoard->announce();
-	}
+	if (DEBUG_MODE == 1) print_div(PUR "The hoard annouce itself");
+	if (DEBUG_MODE == 1) hoard->announce();
 
 	print_div(YLW "The zombies annouce themself");
 	for (int i = 0; i < count; i++)
 		hoard[i].announce();
 
-	if (DEBUG_MODE == 1)
-	{
-		print_div(PUR "Unnamed zombie tried to announce itself");
-		hoard[10].announce();
-	}
+	if (DEBUG_MODE == 1) print_div(PUR "Unnamed zombie tried to announce itself");
+	if (DEBUG_MODE == 1) hoard[10].announce();
 
 	print_div(RED "delete[]");
 	delete[] hoard;
 
-	print_div(YLW "zombieHorde(0, \"zombie\")");
+	print_div(PUR "zombieHorde(0, \"zombie\")");
 	hoard = zombieHorde(0, "zombie");
 
-	print_div(YLW "zombieHorde(-1, \"zombie\")");
+	print_div(PUR "zombieHorde(-1, \"zombie\")");
 	hoard = zombieHorde(-1, "zombie");
 
+	print_div(PUR "zombieHorde(1, \"\")");
+	hoard = zombieHorde(1, "");
+	
 	if (DEBUG_MODE == 1)
 	{
 		try

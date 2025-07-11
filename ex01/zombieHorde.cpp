@@ -6,7 +6,7 @@
 /*   By: tsomchan <tsomchan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 00:05:56 by tsomchan          #+#    #+#             */
-/*   Updated: 2025/07/08 00:05:57 by tsomchan         ###   ########.fr       */
+/*   Updated: 2025/07/12 00:12:07 by tsomchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,6 @@ Zombie* zombieHorde(int N, std::string name)
 		return (NULL);
 	}
 	for (int i = 0; i < N; i++)
-	{
-		//std::cout << i << std::endl;
 		horde[i].set_name(name);
-	}
 	return (horde);
 }

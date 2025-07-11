@@ -6,13 +6,14 @@
 #    By: tsomchan <tsomchan@student.42bangkok.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/08 00:05:10 by tsomchan          #+#    #+#              #
-#    Updated: 2025/07/08 01:53:23 by tsomchan         ###   ########.fr        #
+#    Updated: 2025/07/12 00:24:27 by tsomchan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	Zombie
 
 INC				=	Zombie.hpp
+
 SRCS			=	main.cpp \
 					newZombie.cpp \
 					randomChump.cpp \
@@ -36,10 +37,12 @@ $(OBJS_PTH):
 
 clean:
 	rm -f $(OBJS)
+	rm -f $(D_OBJS)
 	rm -rf $(OBJS_PTH)
 
 fclean: clean
 	rm -f $(NAME)
+	rm -f $(D_NAME)
 
 re: fclean all
 
@@ -48,4 +51,23 @@ re: fclean all
 t: $(NAME)
 	./$(NAME)
 
-.PHONY: t
+D_NAME		=	$(addprefix $(NAME), _debug)
+D_OBJS		=	$(SRCS:%.cpp=$(OBJS_PTH)%_d.o)
+DFLAGS		=	-D DEBUG_MODE=1
+
+$(D_NAME): $(D_OBJS)
+	$(C++) $(C++FLAGS) $(DFLAGS) $(D_OBJS) -I$(INC) -o $(D_NAME)
+
+$(OBJS_PTH)%_d.o: %.cpp Makefile $(INC) | $(OBJS_PTH)
+	$(C++) $(C++FLAGS) $(DFLAGS) -c $< -o $@
+
+d: $(D_NAME)
+	./$(D_NAME)
+
+val: $(NAME)
+	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)
+
+val_d: $(D_NAME)
+	valgrind --leak-check=full --show-leak-kinds=all ./$(D_NAME)
+
+.PHONY: t d val val_d

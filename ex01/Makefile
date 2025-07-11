@@ -6,7 +6,7 @@
 #    By: tsomchan <tsomchan@student.42bangkok.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/08 00:06:06 by tsomchan          #+#    #+#              #
-#    Updated: 2025/07/08 01:50:16 by tsomchan         ###   ########.fr        #
+#    Updated: 2025/07/12 00:24:57 by tsomchan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRCS			=	main.cpp \
 					Zombie.cpp
 
 OBJS_PTH		=	obj/
-OBJS			=	$(SRCS:%.cpp=%.o)
+OBJS			=	$(SRCS:%.cpp=$(OBJS_PTH)%.o)
 
 C++				=	c++
 C++FLAGS		=	-std=c++98 -Werror -Wall -Wextra
@@ -51,7 +51,7 @@ t: $(NAME)
 	./$(NAME)
 
 D_NAME		=	$(addprefix $(NAME), _debug)
-D_OBJS		=	$(SRCS:%.cpp=%_d.o)
+D_OBJS		=	$(SRCS:%.cpp=$(OBJS_PTH)%_d.o)
 DFLAGS		=	-D DEBUG_MODE=1
 
 $(D_NAME): $(D_OBJS)

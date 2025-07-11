@@ -6,7 +6,7 @@
 /*   By: tsomchan <tsomchan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 00:05:29 by tsomchan          #+#    #+#             */
-/*   Updated: 2025/07/08 00:05:33 by tsomchan         ###   ########.fr       */
+/*   Updated: 2025/07/12 00:16:44 by tsomchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ class Zombie
 Zombie* newZombie(std::string name);
 
 void randomChump(std::string name);
+
+# ifndef DEBUG_MODE
+#  define DEBUG_MODE	0
+# endif
 
 # define NCL		"\033[0m"
 # define BLK		"\033[0;30m"
