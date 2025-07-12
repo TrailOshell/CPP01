@@ -6,7 +6,7 @@
 /*   By: tsomchan <tsomchan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 05:24:49 by tsomchan          #+#    #+#             */
-/*   Updated: 2025/07/11 23:18:03 by tsomchan         ###   ########.fr       */
+/*   Updated: 2025/07/12 13:10:49 by tsomchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ void	Harl::complain( std::string level )
 				case(3):
 						(this->*Harl_funcs[3])();
 			}
+			return ;
 		}
 	}
 	std::cout << NCL "[ ??? ]" NCL << std::endl;
