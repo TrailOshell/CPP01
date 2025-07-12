@@ -6,7 +6,7 @@
 /*   By: tsomchan <tsomchan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 00:05:00 by tsomchan          #+#    #+#             */
-/*   Updated: 2025/07/12 00:04:18 by tsomchan         ###   ########.fr       */
+/*   Updated: 2025/07/12 13:05:16 by tsomchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 void print_div(std::string text)
 {
-	std::cout << std::endl;
-	std::cout <<  YLW "- -- --- " NCL + text + YLW " --- -- -" NCL;
-	std::cout << std::endl;
+	std::cout <<  YLW "- -- --- " NCL + text + YLW " --- -- -" NCL << std::endl;
 }
 
 int main(void)
