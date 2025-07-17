@@ -6,7 +6,7 @@
 /*   By: tsomchan <tsomchan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 00:13:10 by tsomchan          #+#    #+#             */
-/*   Updated: 2025/07/08 01:20:44 by tsomchan         ###   ########.fr       */
+/*   Updated: 2025/07/17 14:53:48 by tsomchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,10 @@ int main(void)
 		jim.attack();
 		club.setType("some other type of club");
 		jim.attack();
+	}
+	if (DEBUG_MODE == 1)
+	{
+		HumanB dork("Dork");
+		dork.attack();
 	}
 }
