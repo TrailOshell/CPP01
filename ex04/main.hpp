@@ -6,12 +6,16 @@
 /*   By: tsomchan <tsomchan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 01:41:13 by tsomchan          #+#    #+#             */
-/*   Updated: 2025/07/08 02:07:59 by tsomchan         ###   ########.fr       */
+/*   Updated: 2025/07/17 15:13:21 by tsomchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MAIN_HPP
 # define MAIN_HPP
+
+int		printError(std::string text);
+
+void	replacing(std::ofstream &fo, std::string s1, std::string s2, std::string buffer);
 
 # ifndef DEBUG_MODE
 #  define DEBUG_MODE	0

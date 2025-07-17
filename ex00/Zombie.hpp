@@ -6,7 +6,7 @@
 /*   By: tsomchan <tsomchan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 00:05:29 by tsomchan          #+#    #+#             */
-/*   Updated: 2025/07/12 00:16:44 by tsomchan         ###   ########.fr       */
+/*   Updated: 2025/07/17 15:10:42 by tsomchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,9 @@ class Zombie
 };
 
 Zombie* newZombie(std::string name);
-
 void randomChump(std::string name);
+
+void print_div(std::string text);
 
 # ifndef DEBUG_MODE
 #  define DEBUG_MODE	0

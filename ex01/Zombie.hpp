@@ -6,7 +6,7 @@
 /*   By: tsomchan <tsomchan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 00:05:59 by tsomchan          #+#    #+#             */
-/*   Updated: 2025/07/08 00:06:02 by tsomchan         ###   ########.fr       */
+/*   Updated: 2025/07/17 15:26:30 by tsomchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,9 @@ class Zombie
 };
 
 Zombie* zombieHorde(int N, std::string name);
+
+void print_div(std::string text);
+void zombieHorde_test(int N, std::string name);
 
 # ifndef DEBUG_MODE
 #  define DEBUG_MODE	0

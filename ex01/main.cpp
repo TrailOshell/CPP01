@@ -6,7 +6,7 @@
 /*   By: tsomchan <tsomchan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 00:05:50 by tsomchan          #+#    #+#             */
-/*   Updated: 2025/07/12 13:04:44 by tsomchan         ###   ########.fr       */
+/*   Updated: 2025/07/17 15:26:06 by tsomchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,14 @@
 void print_div(std::string text)
 {
 	std::cout <<  YLW "- -- --- " NCL + text + YLW " --- -- -" NCL << std::endl;
+}
+
+void zombieHorde_test(int N, std::string name)
+{
+	std::cout <<  YLW "- -- --- " NCL;
+	std::cout << PUR "zombieHorde(" << N << ", \"" << name << "\")";
+	std::cout <<  YLW " --- -- -" NCL << std::endl;
+	zombieHorde(N, "zombie");
 }
 
 int main(void)
@@ -44,14 +52,9 @@ int main(void)
 
 	if (DEBUG_MODE == 1)
 	{
-		print_div(PUR "zombieHorde(0, \"zombie\")");
-		hoard = zombieHorde(0, "zombie");
-
-		print_div(PUR "zombieHorde(-1, \"zombie\")");
-		hoard = zombieHorde(-1, "zombie");
-
-		print_div(PUR "zombieHorde(1, \"\")");
-		hoard = zombieHorde(1, "");
+		zombieHorde_test(0, "zombie");
+		zombieHorde_test(-1, "zombie");
+		zombieHorde_test(1, "");
 	
 		try
 		{
