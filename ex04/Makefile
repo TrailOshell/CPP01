@@ -6,7 +6,7 @@
 #    By: tsomchan <tsomchan@student.42bangkok.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/08 01:38:23 by tsomchan          #+#    #+#              #
-#    Updated: 2025/07/08 04:11:34 by tsomchan         ###   ########.fr        #
+#    Updated: 2025/08/30 17:39:52 by tsomchan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,7 +56,7 @@ t: $(NAME)
 	@touch $(TEST_FILE)
 	@echo "Bake Cake Bake Cake Bake Cake Bake Cake Bake Cake Bake Cake" > $(TEST_FILE)
 	./$(NAME) $(TEST_FILE) Cake Lake
-	diff $(TEST_FILE) $(TEST_FILE_R)
+	-diff $(TEST_FILE) $(TEST_FILE_R)
 
 D_NAME		=	$(addprefix $(NAME), _debug)
 D_OBJS		=	$(SRCS:%.cpp=$(OBJS_PTH)%_d.o)

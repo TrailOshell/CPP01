@@ -6,15 +6,11 @@
 /*   By: tsomchan <tsomchan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 01:38:12 by tsomchan          #+#    #+#             */
-/*   Updated: 2025/07/08 04:02:36 by tsomchan         ###   ########.fr       */
+/*   Updated: 2025/08/30 17:37:22 by tsomchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
-
-#include <string>
-#include <iostream>
-#include <fstream>
 
 int		printError(std::string text)
 {

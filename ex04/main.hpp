@@ -6,12 +6,15 @@
 /*   By: tsomchan <tsomchan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 01:41:13 by tsomchan          #+#    #+#             */
-/*   Updated: 2025/07/17 15:13:21 by tsomchan         ###   ########.fr       */
+/*   Updated: 2025/08/30 17:40:23 by tsomchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MAIN_HPP
 # define MAIN_HPP
+# include <string>
+# include <iostream>
+# include <fstream>
 
 int		printError(std::string text);
 
