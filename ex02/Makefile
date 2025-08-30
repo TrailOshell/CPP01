@@ -6,7 +6,7 @@
 #    By: tsomchan <tsomchan@student.42bangkok.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/08 00:06:27 by tsomchan          #+#    #+#              #
-#    Updated: 2025/07/08 01:49:10 by tsomchan         ###   ########.fr        #
+#    Updated: 2025/08/30 17:27:20 by tsomchan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,8 @@ re: fclean all
 
 t: $(NAME)
 	./$(NAME)
+
+d: t
 
 val: $(NAME)
 	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)
